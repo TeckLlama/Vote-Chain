@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8040cfe6-65bf-4033-b6cf-d0c3d1c4a68f": {
+      "ProjectGuid": "8040cfe6-65bf-4033-b6cf-d0c3d1c4a68f",
+      "DisplayName": "VoteChain",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
