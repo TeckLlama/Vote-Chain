@@ -1,0 +1,14 @@
+----- Start of Block -----
+----- Block Index -----
+6
+----- Previous Block Hash -----
+0000de4566daf59f0b5aaa4b431eba24cbe6faa902c0d53844738cd92b7b1843
+----- Block Solve Time -----
+1651972701
+----- Block Nonce -----
+138004
+----- Block Data -----
+
+----- End of Block -----
+----- Block Hash -----
+0000e3d307755abd2f140745e11dc2c7e9c06dfaf77a7b1416732ccf97d47890
