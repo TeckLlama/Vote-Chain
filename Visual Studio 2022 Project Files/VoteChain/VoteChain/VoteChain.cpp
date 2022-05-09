@@ -187,25 +187,22 @@ void mining()
 		}
 	}
 }
-
-int main()
-{
-	SetConsoleTitleA("Vote Chain");	
+int menu() {
 	char menuChar = 0;
-	
+
 	do {// changed from cin to _getch to force input of one char 
 		menuChar = (char)0;
 		SetConsoleTextAttribute(cFormat, 2);
 		std::cout << "[A] Start Voting [A]" << std::endl;
 		std::cout << "[B] Test Hash    [B]" << std::endl;
-		std::cout << "[C] Test Colours [C]" << std::endl; 
+		std::cout << "[C] Test Colours [C]" << std::endl;
 		std::cout << "[D] Exit         [D]" << std::endl;
 		// std::cout << "[D] New Option   [D]" << std::endl;
 		std::cout << "Press A to Initilize Vote or [A/B/C/D] --> ";
 		SetConsoleTextAttribute(cFormat, 15);
 		menuChar = _getch();
 		std::cout << menuChar << std::endl;
-		menuChar = toupper(menuChar);		
+		menuChar = toupper(menuChar);
 	} while (menuChar != 'A' && menuChar != 'B' && menuChar != 'C' && menuChar != 'D');
 	//std::cout << "Test Main.cpp: Accepted User input Char " << menuChar << std::endl;
 	if (menuChar == 'A') {
@@ -215,18 +212,25 @@ int main()
 		voteingThread.join();
 		miningThread.join();
 	}
-	if (menuChar == 'B') {		
+	if (menuChar == 'B') {
+		SetConsoleTextAttribute(cFormat, 2);
 		generateTestHash();
+		SetConsoleTextAttribute(cFormat, 15);
 		std::this_thread::sleep_for(std::chrono::seconds(10));
-		return 2;
-	}
+		}
 	if (menuChar == 'C') {
 		colourTest();
 		std::this_thread::sleep_for(std::chrono::seconds(10));
-		return 2;
-	}
+		}
 	if (menuChar == 'D') {
-		return 2;
+		return 0;
 	}
-	return 0;
+	menu();
+}
+
+
+int main()
+{
+	SetConsoleTitleA("Vote Chain");	
+	menu();	
 }
