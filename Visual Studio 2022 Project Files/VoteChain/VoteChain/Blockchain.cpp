@@ -12,10 +12,12 @@ Blockchain::Blockchain()
 void Blockchain::generateGenesisBlock(Block genBlock, std::string genBlockData)
 {// Initializes Block 0 aka Genesis Block and sets mining difficulty
     //std::cout << "Test Blockchain.cpp: Initializing Genesis Block: Block " << genBlock._nIndex << "..." << std::endl;
+    genBlock.blockIndex = 0;
     genBlock.prevBlockHash = "0000000000000000000000000000000000000000000000000000000000000000";
     genBlock.blockNonce = 1337;
     voteChain.emplace_back(Block(0, genBlockData));
     miningDifficulty = 4;
+    genBlock.blockHash = genBlock.generateBlockHash();
     genBlock.saveNewBlock(0);
     // miningDifficulty Mining speed notes 
     // **MORE testing required**
